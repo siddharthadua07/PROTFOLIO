@@ -178,3 +178,4 @@ You are free to:
 ✅ Share it with others
 
 Attribution is appreciated but not required.
+Last updated: 2026
