@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+.journey-section {
+    font-family: 'Outfit', sans-serif;
+}
+
+.font-display {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Grid lines animation */
+.grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: perspective(500px) rotateX(60deg) translateY(0);
+    }
+
+    100% {
+        transform: perspective(500px) rotateX(60deg) translateY(50px);
+    }
+}
+
+/* Glowing orbs */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: orbPulse 8s infinite ease-in-out;
+}
+
+@keyframes orbPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+/* Scroll-triggered animations */
+.scroll-fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-slide-left {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-slide-right {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-scale-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scroll-scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Updated Ping Animation */
+.animate-ping {
+    animation: custom-ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes custom-ping {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+
+    75%,
+    100% {
+        transform: translate(-50%, -50%) scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Mobile Fixes for Branches and Dots */
+@media (max-width: 767px) {
+
+    /* Ensure the horizontal branch line is positioned correctly relative to the vertical line */
+    .timeline-item .ml-20.relative::before {
+        content: '';
+        position: absolute;
+        left: -3rem;
+        /* Adjusted to reach the vertical line at left-8 */
+        top: 2.5rem;
+        width: 3rem;
+        height: 2px;
+        background: rgba(14, 165, 233, 0.2);
+        z-index: 1;
+    }
+
+    /* Fix Dot positioning so it's not inside the card padding */
+    .timeline-item .ml-20 .absolute.left-8 {
+        left: -3rem !important;
+        /* Forces the dot to sit on the vertical line */
+        transform: translateX(-50%);
+    }
+
+    /* Fix Ping positioning for the dot */
+    .timeline-item .ml-20 .animate-ping {
+        left: -3rem !important;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Desktop spacing adjustment */
+@media (min-width: 768px) {
+    .timeline-item .absolute {
+        top: 2.5rem;
+    }
+}

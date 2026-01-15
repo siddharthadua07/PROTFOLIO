@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+.techSection {
+    min-height: 30vh;
+    width: 100%;
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #000000 0%, #0a1628 50%, #1e3a5f 100%);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.subtitle {
+    color: #60a5fa;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 40px rgba(59, 130, 246, 0.5);
+}
+
+.divider {
+    width: 6rem;
+    height: 0.25rem;
+    background: linear-gradient(to right, #3b82f6, #06b6d4);
+    margin: 0 auto;
+    border-radius: 9999px;
+}
+
+/* Category Badges */
+.categoryContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.categoryBadge {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border: 1px solid;
+}
+
+.marketing {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: #93c5fd;
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.design {
+    background-color: rgba(168, 85, 247, 0.2);
+    color: #d8b4fe;
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+.development {
+    background-color: rgba(6, 182, 212, 0.2);
+    color: #67e8f9;
+    border-color: rgba(6, 182, 212, 0.3);
+}
+
+/* Scrolling Container */
+.scrollContainer {
+    overflow: hidden;
+    padding: 2rem 0;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.scrollTrack {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    width: max-content;
+}
+
+.scrollTrack:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.scrollContent {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0 0.75rem;
+}
+
+/* Tech Card */
+.techCard {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.techCard:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+}
+
+.techIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.techName {
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Bottom Decoration */
+.bottomDecoration {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.dot1 {
+    background-color: #3b82f6;
+}
+
+.dot2 {
+    background-color: #60a5fa;
+    animation-delay: 0.2s;
+}
+
+.dot3 {
+    background-color: #06b6d4;
+    animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .techSection {
+        padding: 3rem 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 0.75rem;
+    }
+
+    .categoryContainer {
+        gap: 0.75rem;
+    }
+
+    .categoryBadge {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .techCard {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .techIcon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .techName {
+        font-size: 0.7rem;
+    }
+}

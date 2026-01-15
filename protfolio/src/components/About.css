@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+.about-wrapper {
+    background: linear-gradient(135deg, #0a0a1a 0%, #0d1b2a 25%, #1b263b 50%, #0d1b2a 75%, #0a0a1a 100%);
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+}
+
+.font-space-grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #38bdf8 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease infinite;
+}
+
+.page-title {
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #38bdf8 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease infinite;
+    margin-top: 25px;
+}
+
+.stat-card {
+    background: linear-gradient(145deg, rgba(30, 58, 95, 0.6) 0%, rgba(15, 30, 50, 0.8) 100%);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.stat-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: rgba(56, 189, 248, 0.6);
+    box-shadow: 0 20px 40px rgba(56, 189, 248, 0.2);
+}
+
+.profile-ring {
+    background: conic-gradient(from 0deg, #38bdf8, #818cf8, #38bdf8);
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.skill-tag {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(129, 140, 248, 0.15) 100%);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.3) 0%, rgba(129, 140, 248, 0.3) 100%);
+    border-color: rgba(56, 189, 248, 0.6);
+    transform: translateY(-2px);
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(56, 189, 248, 0.4);
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(56, 189, 248, 0.6);
+    border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(2deg);
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.3;
+    }
+
+    100% {
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes borderGlow {
+
+    0%,
+    100% {
+        border-color: rgba(56, 189, 248, 0.5);
+    }
+
+    50% {
+        border-color: rgba(129, 140, 248, 0.8);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+    animation: pulse-ring 3s ease-in-out infinite;
+}
+
+.animate-slide-left {
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.animate-slide-right {
+    animation: slideInRight 1s ease-out forwards;
+}
+
+.animate-fade-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-down {
+    animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.animate-border-glow {
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}
+
+.delay-600 {
+    animation-delay: 0.6s;
+}
+
+/* Desktop Responsive */
+@media (min-width: 1024px) {
+    .about-wrapper {
+        padding: 60px 40px;
+    }
+}
+
+/* Tablet Responsive */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .about-wrapper {
+        padding: 50px 30px;
+    }
+
+    .profile-ring {
+        width: 20rem !important;
+        height: 20rem !important;
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+    .about-wrapper {
+        padding: 40px 20px;
+        overflow-x: hidden;
+    }
+
+    .animate-slide-left,
+    .animate-slide-right {
+        animation-duration: 0.6s;
+    }
+
+    p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    .page-title {
+        font-size: 2rem !important;
+        line-height: 1.2;
+    }
+
+    .profile-ring {
+        width: 18rem !important;
+        height: 18rem !important;
+    }
+
+    .cta-button,
+    .cta-button+button {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+    .about-wrapper {
+        padding: 30px 16px;
+    }
+
+    .page-title {
+        font-size: 1.75rem !important;
+    }
+
+    .profile-ring {
+        width: 16rem !important;
+        height: 16rem !important;
+    }
+}
