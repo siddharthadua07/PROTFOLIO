@@ -54,7 +54,7 @@ const About = () => {
 
 
                         <h1 className="animate-fade-up opacity-0 delay-200 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight font-space-grotesk">
-                            Hi, I'm <span className="text-gradient">Alex Morgan</span>
+                            Hi, I'm <span className="text-gradient">Siddhartha Dua</span>
                         </h1>
 
                         <p className="animate-fade-up opacity-0 delay-300 text-xl md:text-2xl text-sky-300 font-medium">
